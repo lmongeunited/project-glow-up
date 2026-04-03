@@ -8,6 +8,17 @@ import { motion } from "framer-motion";
 
 const resources = [
   {
+    name: "Startup Boston",
+    category: "Founder Communities",
+    audience: "All founders, startup employees, and newcomers",
+    stage: "Any",
+    type: "Community / Events",
+    location: "Greater Boston / New England",
+    url: "https://www.startupbos.org/",
+    description: "The connective hub for the Greater Boston and New England startup community — connecting founders, operators, and newcomers across all industries, roles, and stages. Home of Startup Boston Week, an annual conference bringing the entire ecosystem together.",
+    featured: true,
+  },
+  {
     name: "Startup Boston x City of Boston Event Series",
     category: "Beginner Support",
     audience: "First-time founders",
