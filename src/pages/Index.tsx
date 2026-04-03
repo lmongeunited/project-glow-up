@@ -21,7 +21,7 @@ export default function Index() {
       <RoadmapSection sectionRef={roadmapRef} />
       <QuickGuidesSection />
       <ResourcesSection sectionRef={resourcesRef} />
-      <CtaSection />
+      
 
       {/* Footer */}
       <footer className="border-t border-border bg-card">
