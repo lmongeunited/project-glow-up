@@ -3,7 +3,6 @@ import HeroSection from "@/components/HeroSection";
 import RoadmapSection from "@/components/RoadmapSection";
 import ResourcesSection from "@/components/ResourcesSection";
 import QuickGuidesSection from "@/components/QuickGuidesSection";
-import CtaSection from "@/components/CtaSection";
 
 export default function Index() {
   const roadmapRef = useRef<HTMLElement>(null);
@@ -22,7 +21,7 @@ export default function Index() {
       <RoadmapSection sectionRef={roadmapRef} />
       <QuickGuidesSection />
       <ResourcesSection sectionRef={resourcesRef} />
-      <CtaSection />
+      
 
       {/* Footer */}
       <footer className="border-t border-border bg-card">
