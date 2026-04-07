@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { CheckCircle2, Compass } from "lucide-react";
 import { motion } from "framer-motion";
 import heroImage from "@/assets/boston-skyline.jpg";
+import terrierLogo from "@/assets/terrier-tech-logo.png";
 
 const stats = [
   ["8+", "Curated Resources"],
@@ -40,9 +41,12 @@ export default function HeroSection({ onScrollToRoadmap, onScrollToResources }: 
           className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center"
         >
           <div>
-            <Badge className="mb-5 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary hover:bg-primary/15">
-              Boston Founder Resource Hub
-            </Badge>
+            <div className="mb-5 flex items-center gap-3">
+              <img src={terrierLogo} alt="Terrier Tech logo" className="h-12 w-12 object-contain" />
+              <Badge className="rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary hover:bg-primary/15">
+                Boston Founder Resource Hub
+              </Badge>
+            </div>
             <h1 className="max-w-3xl font-display text-4xl tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance">
               A simple, friendly guide to launching a tech startup in Boston.
             </h1>

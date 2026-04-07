@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import terrierLogo from "@/assets/terrier-tech-logo.png";
 import HeroSection from "@/components/HeroSection";
 import RoadmapSection from "@/components/RoadmapSection";
 import ResourcesSection from "@/components/ResourcesSection";
@@ -26,9 +27,12 @@ export default function Index() {
       {/* Footer */}
       <footer className="border-t border-border bg-card">
         <div className="mx-auto max-w-7xl px-6 py-8 lg:px-8">
-          <p className="text-center text-sm text-muted-foreground font-body">
-            Boston Founder Resource Hub · Built for first-time founders and subject matter experts
-          </p>
+          <div className="flex flex-col items-center gap-3">
+            <img src={terrierLogo} alt="Terrier Tech logo" className="h-10 w-10 object-contain" />
+            <p className="text-sm text-muted-foreground font-body">
+              Terrier Tech · Innovation for the Pack · Built for first-time founders
+            </p>
+          </div>
         </div>
       </footer>
     </div>
