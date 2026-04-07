@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import RoadmapSection from "@/components/RoadmapSection";
 import ResourcesSection from "@/components/ResourcesSection";
 import QuickGuidesSection from "@/components/QuickGuidesSection";
+import UniversitiesSection from "@/components/UniversitiesSection";
 
 export default function Index() {
   const roadmapRef = useRef<HTMLElement>(null);
