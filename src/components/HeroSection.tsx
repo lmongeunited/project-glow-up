@@ -41,7 +41,8 @@ export default function HeroSection({ onScrollToRoadmap, onScrollToResources }: 
           className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center"
         >
           <div>
-            <Badge className="mb-5 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary hover:bg-primary/15">
+            <Badge className="mb-5 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary hover:bg-primary/15">
+              <img src={heroImage} alt="Boston skyline" className="h-5 w-5 rounded-full object-cover" />
               Boston Founder Resource Hub
             </Badge>
             <h1 className="max-w-3xl font-display text-4xl tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance">
