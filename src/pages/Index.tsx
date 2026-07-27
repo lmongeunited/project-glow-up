@@ -6,6 +6,7 @@ import ResourcesSection from "@/components/ResourcesSection";
 import QuickGuidesSection from "@/components/QuickGuidesSection";
 import UniversitiesSection from "@/components/UniversitiesSection";
 import NewsSourcesSection from "@/components/NewsSourcesSection";
+import YouTubeChannelsSection from "@/components/YouTubeChannelsSection";
 
 export default function Index() {
   const roadmapRef = useRef<HTMLElement>(null);
