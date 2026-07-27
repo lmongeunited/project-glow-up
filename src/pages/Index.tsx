@@ -6,6 +6,7 @@ import ResourcesSection from "@/components/ResourcesSection";
 import QuickGuidesSection from "@/components/QuickGuidesSection";
 import UniversitiesSection from "@/components/UniversitiesSection";
 import NewsSourcesSection from "@/components/NewsSourcesSection";
+import YouTubeChannelsSection from "@/components/YouTubeChannelsSection";
 
 export default function Index() {
   const roadmapRef = useRef<HTMLElement>(null);
@@ -26,6 +27,7 @@ export default function Index() {
       <UniversitiesSection />
       <ResourcesSection sectionRef={resourcesRef} />
       <NewsSourcesSection />
+      <YouTubeChannelsSection />
 
       {/* Footer */}
       <footer className="border-t border-border bg-card">
