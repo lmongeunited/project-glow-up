@@ -27,6 +27,7 @@ export default function Index() {
       <UniversitiesSection />
       <ResourcesSection sectionRef={resourcesRef} />
       <NewsSourcesSection />
+      <YouTubeChannelsSection />
 
       {/* Footer */}
       <footer className="border-t border-border bg-card">
