@@ -1,8 +1,20 @@
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Lightbulb, Users, ClipboardList, MapPin, HandCoins, Rocket } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Lightbulb, Users, ClipboardList, MapPin, HandCoins, Rocket, CalendarDays, ExternalLink, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import React from "react";
+
+const upcomingEvent = {
+  title: "Student Study Group: AI and the Future of Entrepreneurial Opportunity",
+  host: "Harvard Bloomberg Center for Cities · Led by Natalie Cofield",
+  date: "Sept 23, Oct 6, & Nov 3, 2026",
+  time: "4:00–6:30 p.m.",
+  location: "Bloomberg Center for Cities, Taubman Third Floor, Harvard Kennedy School",
+  description:
+    "How will AI reshape entrepreneurial opportunity across cities and regions? This study group examines AI not as a tool, but as a structural economic force influencing labor demand, firm competitiveness, and entrepreneurial access across local and regional economies.",
+  url: "https://www.cities.harvard.edu/events/student-study-group-ai-and-the-future-of-entrepreneurial-opportunity-implications-for-cities-and-regions/",
+};
 
 const roadmap = [
   {
