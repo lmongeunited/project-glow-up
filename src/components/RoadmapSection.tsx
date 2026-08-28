@@ -1,8 +1,20 @@
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Lightbulb, Users, ClipboardList, MapPin, HandCoins, Rocket } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Lightbulb, Users, ClipboardList, MapPin, HandCoins, Rocket, CalendarDays, ExternalLink, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import React from "react";
+
+const upcomingEvent = {
+  title: "Student Study Group: AI and the Future of Entrepreneurial Opportunity",
+  host: "Harvard Bloomberg Center for Cities · Led by Natalie Cofield",
+  date: "Sept 23, Oct 6, & Nov 3, 2026",
+  time: "4:00–6:30 p.m.",
+  location: "Bloomberg Center for Cities, Taubman Third Floor, Harvard Kennedy School",
+  description:
+    "How will AI reshape entrepreneurial opportunity across cities and regions? This study group examines AI not as a tool, but as a structural economic force influencing labor demand, firm competitiveness, and entrepreneurial access across local and regional economies.",
+  url: "https://www.cities.harvard.edu/events/student-study-group-ai-and-the-future-of-entrepreneurial-opportunity-implications-for-cities-and-regions/",
+};
 
 const roadmap = [
   {
@@ -56,6 +68,70 @@ export default function RoadmapSection({ sectionRef }: RoadmapSectionProps) {
         </div>
         <h2 className="text-3xl font-display text-foreground">Your startup roadmap</h2>
       </div>
+
+      {/* Upcoming Event */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="mb-12"
+      >
+        <div className="mb-4 flex items-center gap-2">
+          <Badge className="rounded-full bg-rose-100 px-3 py-1 text-xs font-body text-rose-700">
+            <CalendarDays className="mr-1.5 h-3.5 w-3.5" />
+            Upcoming Event
+          </Badge>
+        </div>
+        <Card className="overflow-hidden rounded-3xl border-primary/20 bg-gradient-to-br from-primary/5 via-card to-card shadow-sm">
+          <div className="grid gap-0 md:grid-cols-[1.4fr_1fr]">
+            <div className="p-6 lg:p-8">
+              <CardHeader className="p-0 pb-4">
+                <CardDescription className="font-body text-sm font-medium text-primary">
+                  {upcomingEvent.host}
+                </CardDescription>
+                <CardTitle className="font-display text-xl text-foreground sm:text-2xl">
+                  {upcomingEvent.title}
+                </CardTitle>
+              </CardHeader>
+              <p className="font-body text-sm leading-relaxed text-muted-foreground">
+                {upcomingEvent.description}
+              </p>
+              <div className="mt-5 flex flex-wrap items-center gap-3">
+                <a href={upcomingEvent.url} target="_blank" rel="noopener noreferrer">
+                  <Button className="rounded-xl font-body">
+                    Register on event page <ExternalLink className="ml-2 h-4 w-4" />
+                  </Button>
+                </a>
+              </div>
+            </div>
+            <CardContent className="flex flex-col justify-center gap-3 border-t border-border/60 bg-secondary/30 p-6 lg:border-l lg:border-t-0 lg:p-8">
+              <div className="flex items-start gap-3">
+                <CalendarDays className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                <div>
+                  <p className="font-body text-xs uppercase tracking-wider text-muted-foreground">Dates</p>
+                  <p className="font-body text-sm font-medium text-foreground">{upcomingEvent.date}</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Clock className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                <div>
+                  <p className="font-body text-xs uppercase tracking-wider text-muted-foreground">Time</p>
+                  <p className="font-body text-sm font-medium text-foreground">{upcomingEvent.time}</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                <div>
+                  <p className="font-body text-xs uppercase tracking-wider text-muted-foreground">Location</p>
+                  <p className="font-body text-sm font-medium text-foreground">{upcomingEvent.location}</p>
+                </div>
+              </div>
+            </CardContent>
+          </div>
+        </Card>
+      </motion.div>
+
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {roadmap.map((item, i) => {
           const Icon = item.icon;
