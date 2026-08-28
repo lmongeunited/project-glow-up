@@ -68,6 +68,70 @@ export default function RoadmapSection({ sectionRef }: RoadmapSectionProps) {
         </div>
         <h2 className="text-3xl font-display text-foreground">Your startup roadmap</h2>
       </div>
+
+      {/* Upcoming Event */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="mb-12"
+      >
+        <div className="mb-4 flex items-center gap-2">
+          <Badge className="rounded-full bg-rose-100 px-3 py-1 text-xs font-body text-rose-700">
+            <CalendarDays className="mr-1.5 h-3.5 w-3.5" />
+            Upcoming Event
+          </Badge>
+        </div>
+        <Card className="overflow-hidden rounded-3xl border-primary/20 bg-gradient-to-br from-primary/5 via-card to-card shadow-sm">
+          <div className="grid gap-0 md:grid-cols-[1.4fr_1fr]">
+            <div className="p-6 lg:p-8">
+              <CardHeader className="p-0 pb-4">
+                <CardDescription className="font-body text-sm font-medium text-primary">
+                  {upcomingEvent.host}
+                </CardDescription>
+                <CardTitle className="font-display text-xl text-foreground sm:text-2xl">
+                  {upcomingEvent.title}
+                </CardTitle>
+              </CardHeader>
+              <p className="font-body text-sm leading-relaxed text-muted-foreground">
+                {upcomingEvent.description}
+              </p>
+              <div className="mt-5 flex flex-wrap items-center gap-3">
+                <a href={upcomingEvent.url} target="_blank" rel="noopener noreferrer">
+                  <Button className="rounded-xl font-body">
+                    Register on event page <ExternalLink className="ml-2 h-4 w-4" />
+                  </Button>
+                </a>
+              </div>
+            </div>
+            <CardContent className="flex flex-col justify-center gap-3 border-t border-border/60 bg-secondary/30 p-6 lg:border-l lg:border-t-0 lg:p-8">
+              <div className="flex items-start gap-3">
+                <CalendarDays className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                <div>
+                  <p className="font-body text-xs uppercase tracking-wider text-muted-foreground">Dates</p>
+                  <p className="font-body text-sm font-medium text-foreground">{upcomingEvent.date}</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Clock className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                <div>
+                  <p className="font-body text-xs uppercase tracking-wider text-muted-foreground">Time</p>
+                  <p className="font-body text-sm font-medium text-foreground">{upcomingEvent.time}</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                <div>
+                  <p className="font-body text-xs uppercase tracking-wider text-muted-foreground">Location</p>
+                  <p className="font-body text-sm font-medium text-foreground">{upcomingEvent.location}</p>
+                </div>
+              </div>
+            </CardContent>
+          </div>
+        </Card>
+      </motion.div>
+
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {roadmap.map((item, i) => {
           const Icon = item.icon;
